@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phishing Simulation and Training Platform</title>
+    <!-- Include Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <!-- Include Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <!-- Include Axios for HTTP requests -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Phishing Simulation and Training Platform</h1>
+    </header>
+    <nav>
+        <a href="#phishing-simulation">Phishing Simulation</a>
+        <a href="#password-checker">Password Checker</a>
+        <a href="#cybersecurity-game">Cybersecurity Game</a>
+        <a href="about.html">About the team</a>
+
+    </nav>
+    <div class="container">
+        <!-- Phishing Simulation Section -->
+        <div class="section" id="phishing-simulation">
+            <h2>Phishing Email Checker</h2>
+            <div class="phishing-simulation slider">
+                <div class="slides">
+                    <div class="slide">
+                        <img src="images/phishing.png" alt="Phishing Email Simulation 1">
+                    </div>
+                    <div class="slide">
+                        <img src="images/phishing1.jpeg" alt="Phishing Email Simulation 2">
+                    </div>
+                    <div class="slide">
+                        <img src="images/phishing3.jpg" alt="Phishing Email Simulation 3">
+                    </div>
+                </div>
+            </div>
+            <h3>Check if an Email is Phishing</h3>
+            <p>Enter the email content to check if it is a phishing email.</p>
+            <form id="phishing-check-form">
+                <label for="email-content">Enter Email Content:</label>
+                <textarea id="email-content" name="email-content" rows="5" required></textarea>
+                <button type="submit" class="btn primary-btn">Check Email</button>
+                <div id="phishing-error" class="error-message"></div>
+            </form>
+            <div id="phishing-result" class="result-message"></div>
+        </div>
+        <!-- Password Checker Section -->
+        <div class="section" id="password-checker">
+            <h2>Password Strength Checker</h2>
+            <div class="password-checker slider">
+                <div class="slides">
+                    <div class="slide">
+                        <img src="images/password1.jpg" alt="Password Strength Checker 1">
+                    </div>
+                    <div class="slide">
+                        <img src="images/password2.jpeg" alt="Password Strength Checker 2">
+                    </div>
+                    <div class="slide">
+                        <img src="images/password3.jpg" alt="Password Strength Checker 3">
+                    </div>
+                </div>
+            </div>
+            <h3>Check Password Strength</h3>
+            <p>Enter a password to check its strength.</p>
+            <form id="password-check-form">
+                <label for="password-input">Enter Password:</label>
+                <input type="password" id="password-input" name="password" required>
+                <button type="submit" class="btn primary-btn">Check Strength</button>
+            </form>
+            <div id="password-result" class="result-message"></div>
+        </div>
+        <!-- Cybersecurity Game Section -->
+        <div class="section" id="cybersecurity-game">
+            <h2>Interactive Cybersecurity Awareness Game</h2>
+            <div class="cybersecurity-game slider">
+                <div class="slides">
+                    <div class="slide">
+                        <img src="images/password1.jpg" alt="Password Security Level">
+                    </div>
+                    <div class="slide">
+                        <img src="images/social1.webp" alt="Social Engineering Level">
+                    </div>
+                    <div class="slide">
+                        <img src="images/secure.webp" alt="Secure Browsing Level">
+                    </div>
+                </div>
+            </div>
+            <div class="game-levels">
+                <div class="game-level">
+                    <h3>Password Security</h3>
+                    <p>Learn about creating strong passwords through interactive game levels.</p>
+                    <button type="button" onclick="playLevel('Password Security')" class="btn game-btn">Play Level</button>
+                </div>
+                <div class="game-level">
+                    <h3>Social Engineering</h3>
+                    <p>Understand the tactics used in social engineering and how to protect against them.</p>
+                    <button type="button" onclick="playLevel('Social Engineering')" class="btn game-btn">Play Level</button>
+                </div>
+                <div class="game-level">
+                    <h3>Secure Browsing</h3>
+                    <p>Learn best practices for secure browsing to protect your information online.</p>
+                    <button type="button" onclick="playLevel('Secure Browsing')" class="btn game-btn">Play Level</button>
+                </div>
+            </div>
+            <div id="cybersecurity-game-content" class="game-content"></div>
+        </div>
+    </div>
+    <footer>
+        <p>Team #6 Phishing Email detector POC </p>
+    </footer>
+    <div id="toast"></div> <!-- Toast Notification Div -->
+
+    <!-- Quiz Modal -->
+    <div id="quiz-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <div id="quiz-container">
+                <!-- Quiz will be dynamically injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <!-- Include Firebase Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <!-- Include scripts.js -->
+    <script src="scripts.js"></script>
+</body>
+</html>

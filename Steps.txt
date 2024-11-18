@@ -1,0 +1,10 @@
+1- Open - index.html / Install extenstion esmaha Live-server
+2- index.html / clicka ymeen w tdos 3la Open with live server
+______________________________________________________________
+3- Install Node.js / install for windows
+_____________________________________________________________
+Redirect TO the project folder and install this in the cmd
+
+4- npm install express axios body-parser cors dotenv fs
+5- node server.js
+

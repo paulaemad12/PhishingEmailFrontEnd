@@ -1,0 +1,510 @@
+/* Reset some basic elements */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    transition: background-color 0.3s ease;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    animation: slideDown 1s ease;
+}
+
+header h1 {
+    font-size: 2em;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #444;
+    animation: fadeIn 2s ease;
+}
+
+nav a {
+    color: #fff;
+    padding: 15px 20px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: #555;
+    color: #ffeb3b;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center; /* Center the sections */
+}
+
+.section {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 800px;
+    text-align: center; 
+}
+
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.section h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 2em;
+}
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+    height: 200px; /* Adjust based on image height */
+}
+
+.slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: fade 9s infinite;
+}
+
+.slide:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.slide:nth-child(2) {
+    animation-delay: 3s;
+}
+
+.slide:nth-child(3) {
+    animation-delay: 6s;
+}
+
+@keyframes fade {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    30% { opacity: 1; }
+    40% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.slide img {
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    margin: auto;
+    display: block;
+}
+
+.slide img:hover {
+    transform: scale(1.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form textarea,
+form input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font-size: 1em;
+}
+
+form button {
+    padding: 12px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: flex-start;
+}
+
+form button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.result-message {
+    margin-top: 20px;
+    font-size: 1.1em;
+}
+
+.error-message {
+    color: red;
+}
+
+.success-message {
+    color: green;
+}
+
+.cybersecurity-game .game-levels {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.game-level {
+    background-color: #e9e9e9;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    flex: 1 1 30%;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.game-level:hover {
+    transform: scale(1.05);
+    background-color: #d4d4d4;
+}
+
+.game-level h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.game-level p {
+    margin-bottom: 15px;
+}
+
+.game-level button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.game-level button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    animation: slideUp 1s ease;
+}
+
+#toast {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#toast.show {
+    visibility: visible;
+    opacity: 1;
+    animation: fadeout 3s forwards;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+    animation: fadeIn 0.5s;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 5% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 10px;
+    position: relative;
+    animation: slideDown 0.5s;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#quiz-container {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.summary {
+    margin-top: 20px;
+}
+
+.summary h3 {
+    color: #333;
+}
+
+.summary ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.summary li.correct {
+    color: green;
+    margin-bottom: 10px;
+}
+
+.summary li.incorrect {
+    color: red;
+    margin-bottom: 10px;
+}
+
+/* Button Styles */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.primary-btn {
+    background-color: #007BFF;
+    color: #fff;
+    margin: auto;
+}
+
+
+.primary-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.game-btn {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.game-btn:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.disagree-btn {
+    background-color: #ffc107;
+    color: #fff;
+}
+
+.disagree-btn:hover {
+    background-color: #e0a800;
+    transform: scale(1.05);
+}
+
+.report-btn {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.report-btn:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+
+.safe-btn {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.safe-btn:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Quiz Button Enhancements */
+.quiz-button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.quiz-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.quiz-option {
+    display: block;
+    text-align: left;
+    margin: 10px 0;
+    padding: 10px;
+    border: 2px solid #007BFF;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.quiz-option:hover {
+    background-color: #e7f1ff;
+    transform: translateY(-2px);
+}
+
+.quiz-option input {
+    margin-right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .slides {
+        width: 300%;
+    }
+
+    .game-levels {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+
+    /* Adjust image width on smaller screens */
+    .slide img {
+        width: 90%;
+    }
+}
+
+/* Additional Styles for Enhanced Image Presentation */
+
+/* Increase image size on larger screens */
+@media (min-width: 1200px) {
+    .slide img {
+        width: 60%;
+    }
+}
+
+/* Styling Headers */
+h3 {
+    font-size: 1.5em;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-weight: bolder;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Animations */
+@keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
