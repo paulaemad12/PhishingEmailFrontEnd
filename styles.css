@@ -145,7 +145,7 @@ form label {
 }
 
 form textarea,
-form input[type="password",type = "text"] {
+form input[type="text"] {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
